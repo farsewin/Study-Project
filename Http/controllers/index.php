@@ -1,5 +1,5 @@
 <?php
 
-view("index.view.php", [
+view("registration/create.view.php", [
     'heading' => 'Home',
 ]);

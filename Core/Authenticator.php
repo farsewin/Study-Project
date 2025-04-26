@@ -8,14 +8,13 @@ class Authenticator
     {
         $user = App::resolve(Database::class)
             ->query('select * from users where email = :email', [
-            'email' => $email
-        ])->find();
+                'email' => $email
+            ])->find();
 
         if ($user) {
             if (password_verify($password, $user['password'])) {
-                $this->login([
-                    'email' => $email
-                ]);
+                // Pass the entire user object/array to the login method
+                $this->login($user);
 
                 return true;
             }
@@ -26,8 +25,15 @@ class Authenticator
 
     public function login($user)
     {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
         $_SESSION['user'] = [
-            'email' => $user['email']
+            'id' => $user['id'],
+            'name' => $user['username'],
+            'email' => $user['email'],
+            'role' => $user['role']
         ];
 
         session_regenerate_id(true);

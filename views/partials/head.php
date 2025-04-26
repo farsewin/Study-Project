@@ -1,10 +1,12 @@
-<!doctype html>
-<html lang="en" class="h-full bg-gray-100">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>Demo</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم الطالب - جامعة محمد بوضياف</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
-<body class="h-full">
-    <div class="min-h-full">
+<body>
+    <div class="dashboard-container">
